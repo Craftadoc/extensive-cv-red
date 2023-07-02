@@ -170,16 +170,19 @@
 \usepackage{color}
 
 % primary color
-\definecolor{maincol}{RGB}{ 225, 0, 0 }
+\definecolor{maincol}{HTML}
+{E10000} %<{type: "reference", id: "primaryColor"}>
 
 % accent color, secondary
 % \definecolor{accentcol}{RGB}{ 250, 150, 10 }
 
 % dark color
-\definecolor{darkcol}{RGB}{ 70, 70, 70 }
+\definecolor{darkcol}{HTML}
+{464646} %<{type: "reference", id: "darkColor"}>
 
 % light color
-\definecolor{lightcol}{RGB}{245,245,245}
+\definecolor{lightcol}{HTML}
+{F5F5F5} %<{type: "reference", id: "lightColor"}>
 
 
 % Package for links, must be the last package used
@@ -347,6 +350,22 @@
 	\end{center}
 }
 
+\newcommand{\hide}[1]
+{}
+
+\hide{
+	%<{type: "group", description: "Personal information"}
+		%<{type: "text", description: "Your full name", id: "fullName"}>
+		%<{type: "text", description: "Your job title and/or slogan", id: "jobTitle"}>
+		%<{type: "crop", description: "Profile picture", aspect: 0.75, id: "profilePicture"}>
+		%<{type: "text", description: "Your location / address", id: "location"}>
+		%<{type: "phonenumber", description: "Your phone number (optional)", deleteOnEmpty: true, id: "phoneNumber"}>
+		%<{type: "email", description: "Email address", id: "emailAddress"}>
+	%>
+
+	%<{type: "textblock", description: "Profile description", id: "profileDescription"}>
+}
+
 
 %============================================================================%
 %
@@ -368,9 +387,7 @@
 %	META IMAGE
 %----------------------------------------------------------------------------------------
 \includegraphics[width=\linewidth]%
-%<{"description": "Profile picture", "type": "image"}
-	{untitled.jpg}
-%>
+{untitled.jpg} %<{type: "reference", id: "profilePicture"}>
 %trimming relative to image size
 
 %---------------------------------------------------------------------------------------
@@ -378,12 +395,12 @@
 %----------------------------------------------------------------------------------------
 \cvsection{SKILLS}
 
-%<{"description": "Your skills", "type": "list", "minChildren": 3}
-    %<{"description": "", "type": "group"}
+%<{description: "Your skills", type: "list", minChildren: 3, deleteOnEmpty: true}
+    %<{description: "", type: "group", deleteOnEmpty: true}
 
-        \cvskill{Python} %<{"description": "Your skill", "type": "text", "maxLength": 21}>
-        {5+ yrs} %<{"description": "Years of experience (eg 2+ years)", "type": "text", "maxLength": 7}>
-        {1} %<{"description": "Your skill level", "type": "slider", "min": 0, "max": 1, "step": 0.1}>
+        \cvskill{Python} %<{description: "Your skill", type: "text", maxLength: 21}>
+        {5+ yrs} %<{description: "Years of experience (e.g. 2+ years)", type: "text", maxLength: 7}>
+        {1} %<{description: "Your skill level", type: "slider", min: 0, max: 1, step: 0.1}>
         \\[-2pt]
 
     %>
@@ -411,14 +428,14 @@
 \sidebarsection{CONTACT}
 	
 \icontext{MapMarker}{12}
-{Example St. 1\\12345 Somewhere} %<{"description": "Your address", "type": "text"}>
+{Example St. 1\\12345 Somewhere} %<{type: "reference", id: "location"}>
 {black}\\[6pt]
 \icontext{MobilePhone}{12}
-{+49 178 910 11 12 13} %<{"description": "Your phone number", "type": "phonenumber"}>
+{+49 178 910 11 12 13} %<{type: "reference", id: "phoneNumber"}>
 {black}\\[6pt]
 \iconemail{Envelope}{12}
-{test@example.com} %<{"description": "Your email", "type": "email"}>
-{contact@example.com}
+{contact@example.com} %<{type: "reference", id: "emailAddress"}>
+{contact@example.com} %<{type: "reference", id: "emailAddress"}>
 {black}\\[6pt]
 
 \vfill\null
@@ -429,14 +446,14 @@
 
 \sidebarsection{EDUCATION}
 \vspace{-12pt}
-%<{"description": "Education", "type": "list"}
-    %<{"description": "Your education", "type": "group"}
+%<{description: "Education", type: "list", deleteOnEmpty: true}
+    %<{description: "Your education", type: "group", deleteOnEmpty: true}
         \cvmetaevent
-        {2009 - 2011} %<{"description": "Period (eg 2009 - 2011)", "type": "text"}>
-        {M. Sc. Physics.} %<{"description": "Education title", "type": "text"}>
-        {Universität Bonn} %<{"description": "School or university", "type": "text"}>
+        {2009 - 2011} %<{description: "Period (e.g. 2009 - 2011)", type: "text"}>
+        {M. Sc. Physics.} %<{description: "Education title", type: "text"}>
+        {Universität Bonn} %<{description: "School or university", type: "text"}>
         {
-        %<{"description": "Study description", "type": "textblock"}
+        %<{description: "Study description", type: "textblock"}
         Main thematic priority of those master studies was numerical time series analysis of non-linear dynamical systems. Besides data analysis and transformation, great importance was attached to fast algorithms and efficient software architecture.
         
         In the master thesis a numerical approach for the detection of the direction of interaction was proposed. Analysis of this new approach was performed with the help computer simulations to find out its limits and to compare it to another commonly used approaches.
@@ -460,37 +477,39 @@
 %	CERTIFICATION
 %----------------------------------------------------------------------------------------
 %\newpage
-\sidebarsection{CERTIFICATIONS} %<{"description": "Other accomplishments, e.g. certifications", "type": "text", "maxLength": 14, "deleteOnEmpty": true}>
-\vspace{-12pt}
-%<{"description": "Accomplishments", "type": "list"}
-	%<{"description": "Accomplishment", "type": "group"}
-    \cvmetaevent{LPIC 1 - Linux administrator} %<{"description": "Title", "type": "text", "deleteOnEmpty": true}>
-    {}
-    {}
-    {
-    %<{"description": "Description", "type": "textblock", "deleteOnEmpty": true}
-    Certificate issued by the Linux Professional Institute to prove abilities in Linux administration
-    %>
-    }
-    %>
-    \cvmetaevent
-    {IBM InfoSphere Advanced DataStage Essentials}
-    {}
-    {}
-    {Intense course about the ETL technologies and the use of IBM DataStage.}
-    
-    \cvmetaevent
-    {Jump Start Program}
-    {}
-    {}
-    {Two months full-time training in object oriented programming in Java SE/EE, software development, testing and modern enterprise web-frameworks. Other topics were object oriented design patterns, test-driven development, SQL-databases and webservers in Java environment (Tomcat / Glasfish / JBoss / Jety)}
-    
-    
-    \cvmetaevent
-    {Online Classes}
-    {}
-    {}
-    {It is important for me to stay up to date with the newest topics in the field of IT. In DevOps it is also important to have a general overview and a hands-on experience on them. Therefore, besides intense article studies, I also keep myself up to date with online classes.}
+%<{type: "group", description: "Other accomplishments, e.g. certifications (optional)", deleteOnEmpty: true}
+	\sidebarsection{CERTIFICATIONS} %<{description: "Custom title (optional)", type: "text", maxLength: 14}>
+	\vspace{-12pt}
+	%<{description: "Accomplishments", type: "list", deleteOnEmpty: true}
+		%<{description: "Accomplishment", type: "group", deleteOnEmpty: true}
+		\cvmetaevent{LPIC 1 - Linux administrator} %<{description: "Title", type: "text", deleteOnEmpty: true}>
+		{}
+		{}
+		{
+		%<{description: "Description", type: "textblock", deleteOnEmpty: true}
+		Certificate issued by the Linux Professional Institute to prove abilities in Linux administration
+		%>
+		}
+		%>
+		\cvmetaevent
+		{IBM InfoSphere Advanced DataStage Essentials}
+		{}
+		{}
+		{Intense course about the ETL technologies and the use of IBM DataStage.}
+		
+		\cvmetaevent
+		{Jump Start Program}
+		{}
+		{}
+		{Two months full-time training in object oriented programming in Java SE/EE, software development, testing and modern enterprise web-frameworks. Other topics were object oriented design patterns, test-driven development, SQL-databases and webservers in Java environment (Tomcat / Glasfish / JBoss / Jety)}
+		
+		
+		\cvmetaevent
+		{Online Classes}
+		{}
+		{}
+		{It is important for me to stay up to date with the newest topics in the field of IT. In DevOps it is also important to have a general overview and a hands-on experience on them. Therefore, besides intense article studies, I also keep myself up to date with online classes.}
+	%>
 %>
 
 \vfill
@@ -510,14 +529,14 @@
 	\HUGE
 	\bf
 	\textcolor{white}
-	{ILYA RUMYANTSEV}%<{"description": "Your name", "type": "text"}>
+	{ILYA RUMYANTSEV}%<{type: "reference", id: "fullName"}>
 	\\[-24pt]
 	\normalfont
 	\textcolor{white}{
 		\rule{0.1\textwidth}{1.25pt}
 	}\\[4pt]
 	\large\textcolor{white}
-		{Freelance Automation  Consultant and Developer}%<{"description": "Your slogan / job title", "type": "text"}>
+		{Freelance Automation  Consultant and Developer}%<{type: "reference", id: "jobTitle"}>
 \end{minipage}}\\[14pt]
 \vspace{-12pt}
 
@@ -527,7 +546,7 @@
 \vfill\null
 \cvsection{PROFILE}\\
 \cvtext{
-	%<{"description": "Your profile description", "type": "textblock"}
+	%<{type: "reference", id: "profileDescription"}
 	IT Consultant with strong theoretical skills and a passion for OpenSource sofware.\\
     
     DevOps Engineer, specialized both in automation and in custom application development, experienced with large projects and heterogeneous infrastructures. The link between development and operations, comfortable in both.\\
@@ -543,36 +562,36 @@
 \vfill\null
 \cvsection{WORK EXPERIENCE}
 
-%<{"description": "Work Experience", "type": "list"}
-    %<{"description": "", "type": "group"}
+%<{description: "Work Experience", type: "list", deleteOnEmpty: true}
+    %<{description: "", type: "group"}
         \cvevent
-    	{Sep 15 - NOW}%<{"description": "Work period", "type": "text", "maxLength": 15}>
-    	{DevOps/FullStack developer}%<{"description": "Your role", "type": "text"}>
-    	{Research and Development}%<{"description": "Company section / information", "type": "text", "maxLength": 45}>
+    	{Sep 15 - NOW}%<{description: "Work period", type: "text", maxLength: 15}>
+    	{DevOps/FullStack developer}%<{description: "Your role", type: "text"}>
+    	{Research and Development}%<{description: "Company section / information", type: "text", maxLength: 45}>
     	{
-    	%<{"description": "Work / project description", "type": "textblock"}
+    	%<{description: "Work / project description", type: "textblock"}
      A large IAM project required an intuitive interface for role-based access and rights management. At the same time, new workfows for role based access, life time and monitoring had to be established
     	%>
      }
     	{\cvlist{
-    	    %<{"description": "Topics or key actions of your work", "type": "list"}
-        		\item{Creation of a web portal for role- and rights management}%<{"description": "Topic / action", "type": "text"}>
+    	    %<{description: "Topics or key actions of your work", type: "list"}
+        		\item{Creation of a web portal for role- and rights management}%<{description: "Topic / action", type: "text"}>
         		\item Establishing a connection to the existing MicroFocus role solution
         		\item Development of new role-based workfows and processes, as well as training and support
         		\item Maintenance of existing infrastructure
     		%>
     	}}
     	{\cvlist {
-    	    %<{"description": "Technologies used", "type": "list"}
-        		\item{Django for the roles- and rights management tool backend (backend is a REST interface)}%<{"description": "Technology", "type": "text"}>
+    	    %<{description: "Technologies used", type: "list"}
+        		\item{Django for the roles- and rights management tool backend (backend is a REST interface)}%<{description: "Technology", type: "text"}>
         		\item Angular for the easy frontend interaction
         		\item HTML5/CSS3/Bootstrap3 for the frontend
         		\item Ansible + Docker for 1-click deployments
     		%>
     	}}
     	{\cvlist{
-    	    %<{"description": "Achievements / results / finished products", "type": "list"}
-    		\item{A web based tool for an intuitive role assignment and administration}%<{"description": "Achievement", "type": "text"}>
+    	    %<{description: "Achievements / results / finished products", type: "list"}
+    		\item{A web based tool for an intuitive role assignment and administration}%<{description: "Achievement", type: "text"}>
     		\item Online overview of company structures, projects, etc
     		\item Tools for role review, reporting and troubleshooting
 			%>
@@ -708,5 +727,15 @@ environments ad a graphical evaluation using the jqPlot library (also Jaiascript
 %>
 \end{rightcolumn}
 \end{paracol}
+
+
+%<{type: "group", description: "Color settings (optional)"}
+\hide{
+  %<{type: "color", description: "Primary highlight/icon color", initialColor: "#E10000", id: "primaryColor"}>
+  %<{type: "color", description: "Dark color", initialColor: "#464646", id: "darkColor"}>
+  %<{type: "color", description: "Light color", initialColor: "#F5F5F5", id: "lightColor"}>
+}
+%>
+
 \end{document}
 
