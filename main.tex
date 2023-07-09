@@ -355,15 +355,22 @@
 
 \hide{
 	%<{type: "group", description: "Personal information"}
-		%<{type: "text", description: "Your full name", id: "fullName"}>
-		%<{type: "text", description: "Your job title and/or slogan", id: "jobTitle"}>
-		%<{type: "crop", description: "Profile picture", aspect: 0.75, id: "profilePicture"}>
-		%<{type: "text", description: "Your location / address", id: "location"}>
-		%<{type: "phonenumber", description: "Your phone number (optional)", deleteOnEmpty: true, id: "phoneNumber"}>
-		%<{type: "email", description: "Email address", id: "emailAddress"}>
+		%<{type: "text", description: "Your full name", id: "fullName", inputValue: "ILYA RUMYANTSEV"}>
+		%<{type: "text", description: "Your job title and/or slogan", id: "jobTitle", inputValue: "Freelance Automation  Consultant and Developer"}>
+		%<{type: "crop", description: "Profile picture", aspect: 0.75, id: "profilePicture", inputValue: "untitled.jpg"}>
+		%<{type: "text", description: "Your location / address", id: "location", inputValue: "Example St. 1\\\\12345 Somewhere", escapeLatex: false}>
+		%<{type: "phonenumber", description: "Your phone number (optional)", deleteOnEmpty: true, id: "phoneNumber", inputValue: "+49 178 910 11 12 13"}>
+		%<{type: "email", description: "Email address", id: "emailAddress", inputValue: "contact@example.com"}>
 	%>
 
-	%<{type: "textblock", description: "Profile description", id: "profileDescription"}>
+	%<{
+	% 	type: "textblock",
+	% 	description: "Profile description",
+	% 	id: "profileDescription",
+	% 	escapeLatex: false,
+	% 	inputValue: "IT Consultant with strong theoretical skills and a passion for OpenSource sofware.\n\\\\\n\\\\\n DevOps Engineer, specialized both in automation and in custom application development, experienced with large projects and heterogeneous infrastructures. The link between development and operations, comfortable in both.\n\\\\\n\\\\\n Customer-oriented and structured method of working, focused on quality and maintainability. Highly motivated to work in a team, both comfortable in big companies as in small teams."
+	% }
+	%>
 }
 
 
@@ -397,27 +404,61 @@
 
 %<{description: "Your skills", type: "list", minChildren: 3, deleteOnEmpty: true}
     %<{description: "", type: "group", deleteOnEmpty: true}
-
-        \cvskill{Python} %<{description: "Your skill", type: "text", maxLength: 21}>
-        {5+ yrs} %<{description: "Years of experience (e.g. 2+ years)", type: "text", maxLength: 7}>
-        {1} %<{description: "Your skill level", type: "slider", min: 0, max: 1, step: 0.1}>
+        \cvskill{Python} %<{description: "Your skill", type: "text", maxLength: 21, inputValue: "Python"}>
+        {5+ yrs} %<{description: "Years of experience (e.g. 2+ years)", type: "text", maxLength: 7, inputValue: "5+ yrs"}>
+        {1} %<{description: "Your skill level", type: "slider", min: 0, max: 1, step: 0.1, inputValue: 1}>
         \\[-2pt]
 
     %>
-    
-    \cvskill{Ansible} {5+ yrs} {1} \\[-2pt]
-    
-    \cvskill{Linux} {5+ yrs} {1} \\[-2pt]
-    
-    \cvskill{Open Source Tools} {5+ yrs} {1} \\[-2pt]
-    
-    \cvskill{Django} {5+ yrs} {0.8} \\[-2pt]
-    
-    \cvskill{Html/CSS} {3+ yrs} {0.72} \\[-2pt]
-    
-    \cvskill{Javascript} {3+ yrs} {0.69} \\[-2pt]
-    
-    \cvskill{GIT} {3+ yrs} {1} \\[-2pt]
+	%<{description: "", type: "group", deleteOnEmpty: true}
+        \cvskill{Ansible} %<{description: "Your skill", type: "text", maxLength: 21, inputValue: "Ansible"}>
+        {5+ yrs} %<{description: "Years of experience (e.g. 2+ years)", type: "text", maxLength: 7, inputValue: "5+ yrs"}>
+        {1} %<{description: "Your skill level", type: "slider", min: 0, max: 1, step: 0.1, inputValue: 1}>
+        \\[-2pt]
+
+    %>
+    %<{description: "", type: "group", deleteOnEmpty: true}
+        \cvskill{Linux} %<{description: "Your skill", type: "text", maxLength: 21, inputValue: "Linux"}>
+        {5+ yrs} %<{description: "Years of experience (e.g. 2+ years)", type: "text", maxLength: 7, inputValue: "5+ yrs"}>
+        {1} %<{description: "Your skill level", type: "slider", min: 0, max: 1, step: 0.1, inputValue: 1}>
+        \\[-2pt]
+
+    %>
+    %<{description: "", type: "group", deleteOnEmpty: true}
+        \cvskill{Open Source Tools} %<{description: "Your skill", type: "text", maxLength: 21, inputValue: "Open Source Tools"}>
+        {5+ yrs} %<{description: "Years of experience (e.g. 2+ years)", type: "text", maxLength: 7, inputValue: "5+ yrs"}>
+        {1} %<{description: "Your skill level", type: "slider", min: 0, max: 1, step: 0.1, inputValue: 1}>
+        \\[-2pt]
+
+    %>
+	%<{description: "", type: "group", deleteOnEmpty: true}
+        \cvskill{Django} %<{description: "Your skill", type: "text", maxLength: 21, inputValue: "Django"}>
+        {5+ yrs} %<{description: "Years of experience (e.g. 2+ years)", type: "text", maxLength: 7, inputValue: "5+ yrs"}>
+        {0.8} %<{description: "Your skill level", type: "slider", min: 0, max: 1, step: 0.1, inputValue: 0.8}>
+        \\[-2pt]
+
+    %>
+	%<{description: "", type: "group", deleteOnEmpty: true}
+        \cvskill{Html/CSS} %<{description: "Your skill", type: "text", maxLength: 21, inputValue: "Html/CSS"}>
+        {3+ yrs} %<{description: "Years of experience (e.g. 2+ years)", type: "text", maxLength: 7, inputValue: "3+ yrs"}>
+        {0.7} %<{description: "Your skill level", type: "slider", min: 0, max: 1, step: 0.1, inputValue: 0.7}>
+        \\[-2pt]
+
+    %>
+    %<{description: "", type: "group", deleteOnEmpty: true}
+		\cvskill{Javascript} %<{description: "Your skill", type: "text", maxLength: 21, inputValue: "Javascript"}>
+		{3+ yrs} %<{description: "Years of experience (e.g. 2+ years)", type: "text", maxLength: 7, inputValue: "3+ yrs"}>
+		{0.7} %<{description: "Your skill level", type: "slider", min: 0, max: 1, step: 0.1, inputValue: 0.7}>
+		\\[-2pt]
+
+	%>
+    %<{description: "", type: "group", deleteOnEmpty: true}
+		\cvskill{GIT} %<{description: "Your skill", type: "text", maxLength: 21, inputValue: "GIT"}>
+		{3+ yrs} %<{description: "Years of experience (e.g. 2+ years)", type: "text", maxLength: 7, inputValue: "3+ yrs"}>
+		{1} %<{description: "Your skill level", type: "slider", min: 0, max: 1, step: 0.1, inputValue: 1}>
+		\\[-2pt]
+
+	%>
 %>
 
 
@@ -447,13 +488,18 @@
 \sidebarsection{EDUCATION}
 \vspace{-12pt}
 %<{description: "Education", type: "list", deleteOnEmpty: true}
-    %<{description: "Your education", type: "group", deleteOnEmpty: true}
+    %<{description: "", type: "group", deleteOnEmpty: true}
         \cvmetaevent
-        {2009 - 2011} %<{description: "Period (e.g. 2009 - 2011)", type: "text"}>
-        {M. Sc. Physics.} %<{description: "Education title", type: "text"}>
-        {Universität Bonn} %<{description: "School or university", type: "text"}>
+        {2009 - 2011} %<{description: "Period", type: "text", inputValue: "2009 - 2011"}>
+        {M. Sc. Physics.} %<{description: "Education title", type: "text", inputValue: "M. Sc. Physics."}>
+        {Universität Bonn} %<{description: "School or university", type: "text", inputValue: "Universität Bonn"}>
         {
-        %<{description: "Study description", type: "textblock"}
+        %<{
+		% 	description: "Study description",
+		% 	type: "textblock",
+		% 	escapeLatex: false,
+		% 	inputValue: "Main thematic priority of those master studies was numerical time series analysis of non-linear dynamical systems. Besides data analysis and transformation, great importance was attached to fast algorithms and efficient software architecture.\n\\\\\n In the master thesis a numerical approach for the detection of the direction of interaction was proposed. Analysis of this new approach was performed with the help computer simulations to find out its limits and to compare it to another commonly used approaches.\n\\\\\n This numerical approach was highly optimised for cluster computing and implemented in c++ . For those purposes a distributed computing cluster had to be set up and administrated."
+		% }
         Main thematic priority of those master studies was numerical time series analysis of non-linear dynamical systems. Besides data analysis and transformation, great importance was attached to fast algorithms and efficient software architecture.
         
         In the master thesis a numerical approach for the detection of the direction of interaction was proposed. Analysis of this new approach was performed with the help computer simulations to find out its limits and to compare it to another commonly used approaches.
@@ -462,11 +508,22 @@
         %>
         }
     %>
-    \cvmetaevent
-    {2006 - 2009}
-    {B. Sc. Physics.}
-    {Universität Bonn}
-    {The topic for the bachelor's thesis was 'Feshbach resonance'. A numerical application was built to calculate the diagrams.}
+	%<{description: "", type: "group", deleteOnEmpty: true}
+		\cvmetaevent
+		{2006 - 2009} %<{description: "Period", type: "text", inputValue: "2006 - 2009"}>
+		{B. Sc. Physics.} %<{description: "Education title", type: "text", inputValue: "B. Sc. Physics."}>
+		{Universität Bonn} %<{description: "School or university", type: "text", inputValue: "Universität Bonn"}>
+		{
+		%<{
+		% 	description: "Study description",
+		% 	type: "textblock",
+		% 	escapeLatex: false,
+		% 	inputValue: "The topic for the bachelor's thesis was 'Feshbach resonance'. A numerical application was built to calculate the diagrams."
+		% }
+		The topic for the bachelor's thesis was 'Feshbach resonance'. A numerical application was built to calculate the diagrams.
+		%>
+		}
+	%>
 %>
 
 
@@ -478,37 +535,49 @@
 %----------------------------------------------------------------------------------------
 %\newpage
 %<{type: "group", description: "Other accomplishments, e.g. certifications (optional)", deleteOnEmpty: true}
-	\sidebarsection{CERTIFICATIONS} %<{description: "Custom title (optional)", type: "text", maxLength: 14}>
+	\sidebarsection{CERTIFICATIONS} %<{description: "Custom title (optional)", type: "text", maxLength: 14, inputValue: "CERTIFICATIONS"}>
 	\vspace{-12pt}
 	%<{description: "Accomplishments", type: "list", deleteOnEmpty: true}
 		%<{description: "Accomplishment", type: "group", deleteOnEmpty: true}
-		\cvmetaevent{LPIC 1 - Linux administrator} %<{description: "Title", type: "text", deleteOnEmpty: true}>
-		{}
-		{}
-		{
-		%<{description: "Description", type: "textblock", deleteOnEmpty: true}
-		Certificate issued by the Linux Professional Institute to prove abilities in Linux administration
+			\cvmetaevent{LPIC 1 - Linux administrator} %<{description: "Title", type: "text", deleteOnEmpty: true, inputValue: "LPIC 1 - Linux administrator"}>
+			{}
+			{}
+			{
+			%<{description: "Description", type: "textblock", deleteOnEmpty: true, escapeLatex: false, inputValue: "Certificate issued by the Linux Professional Institute to prove abilities in Linux administration"}
+			Certificate issued by the Linux Professional Institute to prove abilities in Linux administration
+			%>
+			}
 		%>
-		}
+		%<{description: "Accomplishment", type: "group", deleteOnEmpty: true}
+			\cvmetaevent{IBM InfoSphere Advanced DataStage Essentials} %<{description: "Title", type: "text", deleteOnEmpty: true, inputValue: "IBM InfoSphere Advanced DataStage Essentials"}>
+			{}
+			{}
+			{
+			%<{description: "Description", type: "textblock", deleteOnEmpty: true, escapeLatex: false, inputValue: "Intense course about the ETL technologies and the use of IBM DataStage."}
+			Intense course about the ETL technologies and the use of IBM DataStage.
+			%>
+			}
 		%>
-		\cvmetaevent
-		{IBM InfoSphere Advanced DataStage Essentials}
-		{}
-		{}
-		{Intense course about the ETL technologies and the use of IBM DataStage.}
-		
-		\cvmetaevent
-		{Jump Start Program}
-		{}
-		{}
-		{Two months full-time training in object oriented programming in Java SE/EE, software development, testing and modern enterprise web-frameworks. Other topics were object oriented design patterns, test-driven development, SQL-databases and webservers in Java environment (Tomcat / Glasfish / JBoss / Jety)}
-		
-		
-		\cvmetaevent
-		{Online Classes}
-		{}
-		{}
-		{It is important for me to stay up to date with the newest topics in the field of IT. In DevOps it is also important to have a general overview and a hands-on experience on them. Therefore, besides intense article studies, I also keep myself up to date with online classes.}
+		%<{description: "Accomplishment", type: "group", deleteOnEmpty: true}
+			\cvmetaevent{Jump Start Program} %<{description: "Title", type: "text", deleteOnEmpty: true, inputValue: "Jump Start Program"}>
+			{}
+			{}
+			{
+			%<{description: "Description", type: "textblock", deleteOnEmpty: true, escapeLatex: false, inputValue: "Two months full-time training in object oriented programming in Java SE/EE, software development, testing and modern enterprise web-frameworks. Other topics were object oriented design patterns, test-driven development, SQL-databases and webservers in Java environment (Tomcat / Glasfish / JBoss / Jety)"}
+			Two months full-time training in object oriented programming in Java SE/EE, software development, testing and modern enterprise web-frameworks. Other topics were object oriented design patterns, test-driven development, SQL-databases and webservers in Java environment (Tomcat / Glasfish / JBoss / Jety)
+			%>
+			}
+		%>
+		%<{description: "Accomplishment", type: "group", deleteOnEmpty: true}
+			\cvmetaevent{Online Classes} %<{description: "Title", type: "text", deleteOnEmpty: true, inputValue: "Online Classes"}>
+			{}
+			{}
+			{
+			%<{description: "Description", type: "textblock", deleteOnEmpty: true, escapeLatex: false, inputValue: "It is important for me to stay up to date with the newest topics in the field of IT. In DevOps it is also important to have a general overview and a hands-on experience on them. Therefore, besides intense article studies, I also keep myself up to date with online classes."}
+			It is important for me to stay up to date with the newest topics in the field of IT. In DevOps it is also important to have a general overview and a hands-on experience on them. Therefore, besides intense article studies, I also keep myself up to date with online classes.
+			%>
+			}
+		%>
 	%>
 %>
 
@@ -565,165 +634,226 @@
 %<{description: "Work Experience", type: "list", deleteOnEmpty: true}
     %<{description: "", type: "group"}
         \cvevent
-    	{Sep 15 - NOW}%<{description: "Work period", type: "text", maxLength: 15}>
-    	{DevOps/FullStack developer}%<{description: "Your role", type: "text"}>
-    	{Research and Development}%<{description: "Company section / information", type: "text", maxLength: 45}>
+    	{Sep 15 - NOW}%<{description: "Work period", type: "text", maxLength: 15, inputValue: "Sep 15 - NOW"}>
+    	{DevOps/FullStack developer}%<{description: "Your role", type: "text", inputValue: "DevOps/FullStack developer"}>
+    	{Research and Development}%<{description: "Company section / information", type: "text", maxLength: 45, inputValue: "Research and Development"}>
     	{
-    	%<{description: "Work / project description", type: "textblock"}
-     A large IAM project required an intuitive interface for role-based access and rights management. At the same time, new workfows for role based access, life time and monitoring had to be established
+    	%<{description: "Work / project description", type: "textblock", inputValue: "A large IAM project required an intuitive interface for role-based access and rights management. At the same time, new workfows for role based access, life time and monitoring had to be established"}
+     	A large IAM project required an intuitive interface for role-based access and rights management. At the same time, new workfows for role based access, life time and monitoring had to be established
     	%>
      }
     	{\cvlist{
     	    %<{description: "Topics or key actions of your work", type: "list"}
-        		\item{Creation of a web portal for role- and rights management}%<{description: "Topic / action", type: "text"}>
-        		\item Establishing a connection to the existing MicroFocus role solution
-        		\item Development of new role-based workfows and processes, as well as training and support
-        		\item Maintenance of existing infrastructure
+        		\item{Creation of a web portal for role- and rights management}%<{description: "Topic / action", type: "text", inputValue: "Creation of a web portal for role- and rights management"}>
+        		\item{Establishing a connection to the existing MicroFocus role solution}%<{description: "Topic / action", type: "text", inputValue: "Establishing a connection to the existing MicroFocus role solution"}>
+        		\item{Development of new role-based workfows and processes, as well as training and support}%<{description: "Topic / action", type: "text", inputValue: "Development of new role-based workfows and processes, as well as training and support"}>
+        		\item{Maintenance of existing infrastructure}%<{description: "Topic / action", type: "text", inputValue: "Maintenance of existing infrastructure"}>
     		%>
     	}}
     	{\cvlist {
     	    %<{description: "Technologies used", type: "list"}
-        		\item{Django for the roles- and rights management tool backend (backend is a REST interface)}%<{description: "Technology", type: "text"}>
-        		\item Angular for the easy frontend interaction
-        		\item HTML5/CSS3/Bootstrap3 for the frontend
-        		\item Ansible + Docker for 1-click deployments
+        		\item{Django for the roles- and rights management tool backend (backend is a REST interface)}%<{description: "Technology", type: "text", inputValue: "Django for the roles- and rights management tool backend (backend is a REST interface)"}>
+        		\item{Angular for the easy frontend interaction}%<{description: "Technology", type: "text", inputValue: "Angular for the easy frontend interaction"}>
+        		\item{HTML5/CSS3/Bootstrap3 for the frontend}%<{description: "Technology", type: "text", inputValue: "HTML5/CSS3/Bootstrap3 for the frontend"}>
+        		\item{Ansible + Docker for 1-click deployments}%<{description: "Technology", type: "text", inputValue: "Ansible + Docker for 1-click deployments"}>
     		%>
     	}}
     	{\cvlist{
     	    %<{description: "Achievements / results / finished products", type: "list"}
-    		\item{A web based tool for an intuitive role assignment and administration}%<{description: "Achievement", type: "text"}>
-    		\item Online overview of company structures, projects, etc
-    		\item Tools for role review, reporting and troubleshooting
+    		\item{A web based tool for an intuitive role assignment and administration}%<{description: "Achievement", type: "text", inputValue: "A web based tool for an intuitive role assignment and administration"}>
+    		\item{Online overview of company structures, projects, etc}%<{description: "Achievement", type: "text", inputValue: "Online overview of company structures, projects, etc"}>
+    		\item{Tools for role review, reporting and troubleshooting}%<{description: "Achievement", type: "text", inputValue: "Tools for role review, reporting and troubleshooting"}>
 			%>
     	}}
 
     \vfill\null
     %>
-    \cvevent
-	{Jan 15 - Sep 15}
-	{DevOps engineer}
-	{Research and Development}
-	{Responsible for infrastructure architecture with regard on the future development and tool selection in the field of identity and access management}
-	{\cvlist{
-		\item Selection of future-proof tools for a large infrastructure
-		\item Infrastructure migration into a cloudstack cloud
-		\item Quality assurance in terms of documentation
-		\item Tool development for infrastructure overview
-		\item Development of Ansible modules for client
-	}}
-	{\cvlist {
-		\item Python for custom tool development
-		\item Ansible for infrastructure migration and cloud configuration
-		\item SLES12
-		\item Django for Visualization
-	}}
-	{\cvlist{
-		\item Ansible module for SLES12 System + Package registration
-		\item Python tool for ACL-administration in cloud
-		\item Fully automated migration of old systems into cloud with Ansible playbooks/roles
-		\item Django tool on LDAP - Schema Review
-	}}
+	%<{description: "", type: "group"}
+		\cvevent
+		{Jan 15 - Sep 15}%<{description: "Work period", type: "text", maxLength: 15, inputValue: "Jan 15 - Sep 15"}>
+		{DevOps engineer}%<{description: "Your role", type: "text", inputValue: "DevOps engineer"}>
+		{Research and Development}%<{description: "Company section / information", type: "text", maxLength: 45, inputValue: "Research and Development"}>
+		{
+		%<{description: "Work / project description", type: "textblock", inputValue: "Responsible for infrastructure architecture with regard on the future development and tool selection in the field of identity and access management"}
+		Responsible for infrastructure architecture with regard on the future development and tool selection in the field of identity and access management
+		%>
+	}
+		{\cvlist{
+			%<{description: "Topics or key actions of your work", type: "list"}
+				\item{Selection of future-proof tools for a large infrastructure}%<{description: "Topic / action", type: "text", inputValue: "Selection of future-proof tools for a large infrastructure"}>
+				\item{Infrastructure migration into a cloudstack cloud}%<{description: "Topic / action", type: "text", inputValue: "Infrastructure migration into a cloudstack cloud"}>
+				\item{Quality assurance in terms of documentation}%<{description: "Topic / action", type: "text", inputValue: "Quality assurance in terms of documentation"}>
+				\item{Tool development for infrastructure overview}%<{description: "Topic / action", type: "text", inputValue: "Tool development for infrastructure overview"}>
+				\item{Development of Ansible modules for client}%<{description: "Topic / action", type: "text", inputValue: "Development of Ansible modules for client"}>
+			%>
+		}}
+		{\cvlist {
+			%<{description: "Technologies used", type: "list"}
+				\item{Python for custom tool development}%<{description: "Technology", type: "text", inputValue: "Python for custom tool development"}>
+				\item{Ansible for infrastructure migration and cloud configuration}%<{description: "Technology", type: "text", inputValue: "Ansible for infrastructure migration and cloud configuration"}>
+				\item{SLES12}%<{description: "Technology", type: "text", inputValue: "SLES12"}>
+				\item{Django for Visualization}%<{description: "Technology", type: "text", inputValue: "Django for Visualization"}>
+			%>
+		}}
+		{\cvlist{
+			%<{description: "Achievements / results / finished products", type: "list"}
+			\item{Ansible module for SLES12 System + Package registration}%<{description: "Achievement", type: "text", inputValue: "Ansible module for SLES12 System + Package registration"}>
+			\item{Python tool for ACL-administration in cloud}%<{description: "Achievement", type: "text", inputValue: "Python tool for ACL-administration in cloud"}>
+			\item{Fully automated migration of old systems into cloud with Ansible playbooks/roles}%<{description: "Achievement", type: "text", inputValue: "Fully automated migration of old systems into cloud with Ansible playbooks/roles"}>
+			\item{Django tool on LDAP - Schema Review}%<{description: "Achievement", type: "text", inputValue: "Django tool on LDAP - Schema Review"}>
+			%>
+		}}
 
-    \vfill\null
-    \cvevent
-	{Mar 14 - Jan 15}
-	{Systems Analyst}
-	{Research and Development}
-	{Responsible for infrastructure architecture / automaton as well as custom tool development on a project for directory services and identity / access management in a large heterogeneous environment.}
-	{\cvlist{
-		\item Design and implementation of update and deployment process automaton
-		\item Quality assurance by design of infrastructure monitoring, centralized logging solutions and documentation
-		\item Customized tool creation for ldap operations
-		\item Installation and maintenance of single sign on solutions
-		\item Customer support in ldap / infrastructural / programming concerns
-	}}
-	{\cvlist {
-		\item Ansible for infrastructure automaton and configuration management
-		\item Python for custom Tool development
-		\item nxLog + rsyslog + graylog for logging infrastructure
-		\item NOVELL eDirectory
-		\item Shibboleth as identity Provider combined with ldap
-		\item SLES11
-		\item Git for configuration and documentation versioning
-	}}
-	{\cvlist{
-		\item Drastically accelerated (~20x faster) the update process and improved its reliability by introduction of centralized configuration management
-		\item Extended the python-ldap library with interfaces for simplified access and modification of LDAP-Objects and searches
-		\item  Introduction of a complete and reliable centralized logging solution including log filtering and alerting for both windows and Linux systems
-	}}
+	\vfill\null
+	%>
+	%<{description: "", type: "group"}
+		\cvevent
+		{Mar 14 - Jan 15}%<{description: "Work period", type: "text", maxLength: 15, inputValue: "Mar 14 - Jan 15"}>
+		{Systems Analyst}%<{description: "Your role", type: "text", inputValue: "Systems Analyst"}>
+		{Research and Development}%<{description: "Company section / information", type: "text", maxLength: 45, inputValue: "Research and Development"}>
+		{
+		%<{description: "Work / project description", type: "textblock", inputValue: "Responsible for infrastructure architecture / automation as well as custom tool development on a project for directory services and identity / access management in a large heterogeneous environment."}
+		Responsible for infrastructure architecture / automation as well as custom tool development on a project for directory services and identity / access management in a large heterogeneous environment.
+		%>
+	}
+		{\cvlist{
+			%<{description: "Topics or key actions of your work", type: "list"}
+				\item{Design and implementation of update and deployment process automation}%<{description: "Topic / action", type: "text", inputValue: "Design and implementation of update and deployment process automation"}>
+				\item{Quality assurance by design of infrastructure monitoring, centralized logging solutions and documentation}%<{description: "Topic / action", type: "text", inputValue: "Quality assurance by design of infrastructure monitoring, centralized logging solutions and documentation"}>
+				\item{Customized tool creation for ldap operations}%<{description: "Topic / action", type: "text", inputValue: "Customized tool creation for ldap operations"}>
+				\item{Installation and maintenance of single sign on solutions}%<{description: "Topic / action", type: "text", inputValue: "Installation and maintenance of single sign on solutions"}>
+				\item{Customer support in ldap / infrastructural / programming concerns}%<{description: "Topic / action", type: "text", inputValue: "Customer support in ldap / infrastructural / programming concerns"}>
+			%>
+		}}
+		{\cvlist {
+			%<{description: "Technologies used", type: "list"}
+				\item{Ansible for infrastructure automaton and configuration management}%<{description: "Technology", type: "text", inputValue: "Ansible for infrastructure automaton and configuration management"}>
+				\item{Python for custom Tool development}%<{description: "Technology", type: "text", inputValue: "Python for custom Tool development"}>
+				\item{nxLog + rsyslog + graylog for logging infrastructure}%<{description: "Technology", type: "text", inputValue: "nxLog + rsyslog + graylog for logging infrastructure"}>
+				\item{NOVELL eDirectory}%<{description: "Technology", type: "text", inputValue: "NOVELL eDirectory"}>
+				\item{Shibboleth as identity Provider combined with ldap}%<{description: "Technology", type: "text", inputValue: "Shibboleth as identity Provider combined with ldap"}>
+				\item{SLES11}%<{description: "Technology", type: "text", inputValue: "SLES11"}>
+				\item{Git for configuration and documentation versioning}%<{description: "Technology", type: "text", inputValue: "Git for configuration and documentation versioning"}>
+			%>
+		}}
+		{\cvlist{
+			%<{description: "Achievements / results / finished products", type: "list"}
+			\item{Drastically accelerated (~20x faster) the update process and improved its reliability by introduction of centralized configuration management}%<{description: "Achievement", type: "text", inputValue: "Drastically accelerated (~20x faster) the update process and improved its reliability by introduction of centralized configuration management"}>
+			\item{Extended the python-ldap library with interfaces for simplified access and modification of LDAP-Objects and searches}%<{description: "Achievement", type: "text", inputValue: "Extended the python-ldap library with interfaces for simplified access and modification of LDAP-Objects and searches"}>
+			\item{Introduction of a complete and reliable centralized logging solution including log filtering and alerting for both windows and Linux systems}%<{description: "Achievement", type: "text", inputValue: "Introduction of a complete and reliable centralized logging solution including log filtering and alerting for both windows and Linux systems"}>
+			%>
+		}}
 
-    \vfill\null
-    \cvevent
-	{Sep 13 - Mar 14}
-	{Systems Analyst}
-	{Tourism industry}
-	{Responsible for data transformation and tool customization on a migration (legacy c++ code from Solaris to Linux systems) project. The tasks include}
-	{\cvlist{
-		\item Tool development for identification of critical spots in code
-		\item Legacy code analysis
-		\item Quality assurance
-		\item Department-wide training in python
-		\item Consulting in topics of migration to Git
-	}}
-	{\cvlist {
-		\item Python
-		\item Git
-		\item Linux (Debian)
-	}}
-	{\cvlist{
-		\item Implementing code coverage and dynamic code checker for c++ legacy source code based on gcov
-		\item Introduction of Python + Environment in project
-	}}
+	\vfill\null
+	%>
+	%<{description: "", type: "group"}
+		\cvevent
+		{Sep 13 - Mar 14}%<{description: "Work period", type: "text", maxLength: 15, inputValue: "Sep 13 - Mar 14"}>
+		{Systems Analyst}%<{description: "Your role", type: "text", inputValue: "Systems Analyst"}>
+		{Tourism industry}%<{description: "Company section / information", type: "text", maxLength: 45, inputValue: "Tourism industry"}>
+		{
+		%<{description: "Work / project description", type: "textblock", inputValue: "Responsible for data transformation and tool customization on a migration (legacy c++ code from Solaris to Linux systems) project. The tasks include"}
+		Responsible for data transformation and tool customization on a migration (legacy c++ code from Solaris to Linux systems) project. The tasks include
+		%>
+	}
+		{\cvlist{
+			%<{description: "Topics or key actions of your work", type: "list"}
+				\item{Tool development for identification of critical spots in code}%<{description: "Topic / action", type: "text", inputValue: "Tool development for identification of critical spots in code"}>
+				\item{Legacy code analysis}%<{description: "Topic / action", type: "text", inputValue: "Legacy code analysis"}>
+				\item{Quality assurance}%<{description: "Topic / action", type: "text", inputValue: "Quality assurance"}>
+				\item{Department-wide training in python}%<{description: "Topic / action", type: "text", inputValue: "Department-wide training in python"}>
+				\item{Consulting in topics of migration to Git}%<{description: "Topic / action", type: "text", inputValue: "Consulting in topics of migration to Git"}>
+			%>
+		}}
+		{\cvlist {
+			%<{description: "Technologies used", type: "list"}
+				\item{Python}%<{description: "Technology", type: "text", inputValue: "Python"}>
+				\item{Git}%<{description: "Technology", type: "text", inputValue: "Git"}>
+				\item{Linux (Debian)}%<{description: "Technology", type: "text", inputValue: "Linux (Debian)"}>
+			%>
+		}}
+		{\cvlist{
+			%<{description: "Achievements / results / finished products", type: "list"}
+			\item{Implementing code coverage and dynamic code checker for c++ legacy source code based on gcov}%<{description: "Achievement", type: "text", inputValue: "Implementing code coverage and dynamic code checker for c++ legacy source code based on gcov"}>
+			\item{Introduction of Python + Environment in project}%<{description: "Achievement", type: "text", inputValue: "Introduction of Python + Environment in project"}>
+			%>
+		}}
 
-    \vfill\null
-    \cvevent
-	{Oct 12 - Sep 13}
-	{Systems Analyst}
-	{Tourism industry}
-	{Responsible for the infrastructure including performance and quality assurance on a large social media project.}
-	{\cvlist{
-		\item Organization and care of a cloud network (Debian systems)
-		\item Support for software developers
-		\item Configuration of open source tools for code quality and documentation
-		\item Implementation of performance checks
-		\item Implementation of automated reports on code quality and performance
-	}}
-	{\cvlist {
-		\item Python + Django for tool development
-		\item Sonar as static and dynamic tool for code analysis
-		\item OpenLDAP for user rights management
-		\item JIRA as the issue tracking/SCRUM tool
-	}}
-	{\cvlist{
-		\item Customized wiki and documentation application for developers with Jenkins and Git integration
-		\item Django web application to test the product performance using selenium tests in background with customizable tests / test
-environments ad a graphical evaluation using the jqPlot library (also Jaiascript / jQuery)
-		\item Improvement of the overall code quality by raising test coverage (+ \~30\%) and identification + elimination of potential code flaws
-	}}
+	\vfill\null
+	%>
+	%<{description: "", type: "group"}
+		\cvevent
+		{Oct 12 - Sep 13}%<{description: "Work period", type: "text", maxLength: 15, inputValue: "Oct 12 - Sep 13"}>
+		{Systems Analyst}%<{description: "Your role", type: "text", inputValue: "Systems Analyst"}>
+		{Tourism industry}%<{description: "Company section / information", type: "text", maxLength: 45, inputValue: "Tourism industry"}>
+		{
+		%<{description: "Work / project description", type: "textblock", inputValue: "Responsible for the infrastructure including performance and quality assurance on a large social media project."}
+		Responsible for the infrastructure including performance and quality assurance on a large social media project.
+		%>
+	}
+		{\cvlist{
+			%<{description: "Topics or key actions of your work", type: "list"}
+				\item{Organization and care of a cloud network (Debian systems)}%<{description: "Topic / action", type: "text", inputValue: "Organization and care of a cloud network (Debian systems)"}>
+				\item{Support for software developers}%<{description: "Topic / action", type: "text", inputValue: "Support for software developers"}>
+				\item{Configuration of open source tools for code quality and documentation}%<{description: "Topic / action", type: "text", inputValue: "Configuration of open source tools for code quality and documentation"}>
+				\item{Implementation of performance checks}%<{description: "Topic / action", type: "text", inputValue: "Implementation of performance checks"}>
+				\item{Implementation of automated reports on code quality and performance}%<{description: "Topic / action", type: "text", inputValue: "Implementation of automated reports on code quality and performance"}>
+			%>
+		}}
+		{\cvlist {
+			%<{description: "Technologies used", type: "list"}
+				\item{Python + Django for tool development}%<{description: "Technology", type: "text", inputValue: "Python + Django for tool development"}>
+				\item{Sonar as static and dynamic tool for code analysis}%<{description: "Technology", type: "text", inputValue: "Sonar as static and dynamic tool for code analysis"}>
+				\item{OpenLDAP for user rights management}%<{description: "Technology", type: "text", inputValue: "OpenLDAP for user rights management"}>
+				\item{JIRA as the issue tracking/SCRUM tool}%<{description: "Technology", type: "text", inputValue: "JIRA as the issue tracking/SCRUM tool"}>
+			%>
+		}}
+		{\cvlist{
+			%<{description: "Achievements / results / finished products", type: "list"}
+			\item{Customized wiki and documentation application for developers with Jenkins and Git integration}%<{description: "Achievement", type: "text", inputValue: "Customized wiki and documentation application for developers with Jenkins and Git integration"}>
+			\item{Django web application to test the product performance using selenium tests in background with customizable tests / test environments ad a graphical evaluation using the jqPlot library (also Javascript / jQuery)}%<{description: "Achievement", type: "text", inputValue: "Django web application to test the product performance using selenium tests in background with customizable tests / test environments ad a graphical evaluation using the jqPlot library (also Javascript / jQuery)"}>
+			\item{Improvement of the overall code quality by raising test coverage (+ \~30\%) and identification + elimination of potential code flaws}%<{description: "Achievement", type: "text", inputValue: "Improvement of the overall code quality by raising test coverage (+ \~30\%) and identification + elimination of potential code flaws"}>
+			%>
+		}}
 
-    \vfill\null
-    \cvevent
-	{Oct 11 - Oct 12}
-	{IT Consultant}
-	{Accenture Tech. Solutions}
-	{Large public service project with the goal to establish a platform for handling of finance processes with a very high number of transactions. Main focus was the migration of legacy data, by assuring data quality and transformation into various formats}
-	{\cvlist{
-		\item Customer consulting with regard to loading / unloading interfaces
-		\item Definition of requirements for transformation of legacy data
-		\item Implementation of algorithms for data transformation
-		\item Tool development for secure data transport
-		\item Tool development for tests of data quality/interface implementation
-	}}
-	{\cvlist {
-		\item Standard Linux tools, such as awk, sed, grep, ...
-		\item Python for in-depth data analysis
-		\item Java for transport layers
-		\item IBM DataStage
-	}}
-	{\cvlist{
-		\item Definition of uniform standards
-		\item Introduction of the standard Linux stack as global toolset for data analysis in project
-	}}
+	\vfill\null
+	%>
+	%<{description: "", type: "group"}
+		\cvevent
+		{Oct 11 - Oct 12}%<{description: "Work period", type: "text", maxLength: 15, inputValue: "Oct 11 - Oct 12"}>
+		{IT Consultant}%<{description: "Your role", type: "text", inputValue: "IT Consultant"}>
+		{Accenture Tech. Solutions}%<{description: "Company section / information", type: "text", maxLength: 45, inputValue: "Accenture Tech. Solutions"}>
+		{
+		%<{description: "Work / project description", type: "textblock", inputValue: "Large public service project with the goal to establish a platform for handling of finance processes with a very high number of transactions. Main focus was the migration of legacy data, by assuring data quality and transformation into various formats"}
+		Large public service project with the goal to establish a platform for handling of finance processes with a very high number of transactions. Main focus was the migration of legacy data, by assuring data quality and transformation into various formats
+		%>
+	}
+		{\cvlist{
+			%<{description: "Topics or key actions of your work", type: "list"}
+				\item{Customer consulting with regard to loading / unloading interfaces}%<{description: "Topic / action", type: "text", inputValue: "Customer consulting with regard to loading / unloading interfaces"}>
+				\item{Definition of requirements for transformation of legacy data}%<{description: "Topic / action", type: "text", inputValue: "Definition of requirements for transformation of legacy data"}>
+				\item{Implementation of algorithms for data transformation}%<{description: "Topic / action", type: "text", inputValue: "Implementation of algorithms for data transformation"}>
+				\item{Tool development for secure data transport}%<{description: "Topic / action", type: "text", inputValue: "Tool development for secure data transport"}>
+				\item{Tool development for tests of data quality/interface implementation}%<{description: "Topic / action", type: "text", inputValue: "Tool development for tests of data quality/interface implementation"}>
+			%>
+		}}
+		{\cvlist {
+			%<{description: "Technologies used", type: "list"}
+				\item{Standard Linux tools, such as awk, sed, grep, ...}%<{description: "Technology", type: "text", inputValue: "Standard Linux tools, such as awk, sed, grep, ..."}>
+				\item{Python for in-depth data analysis}%<{description: "Technology", type: "text", inputValue: "Python for in-depth data analysis"}>
+				\item{Java for transport layers}%<{description: "Technology", type: "text", inputValue: "Java for transport layers"}>
+				\item{IBM DataStage}%<{description: "Technology", type: "text", inputValue: "IBM DataStage"}>
+			%>
+		}}
+		{\cvlist{
+			%<{description: "Achievements / results / finished products", type: "list"}
+			\item{Definition of uniform standards}%<{description: "Achievement", type: "text", inputValue: "Definition of uniform standards"}>
+			\item{Introduction of the standard Linux stack as global toolset for data analysis in project}%<{description: "Achievement", type: "text", inputValue: "Introduction of the standard Linux stack as global toolset for data analysis in project"}>
+			%>
+		}}
+
+	\vfill\null
+	%>
 %>
 \end{rightcolumn}
 \end{paracol}
@@ -731,9 +861,9 @@ environments ad a graphical evaluation using the jqPlot library (also Jaiascript
 
 %<{type: "group", description: "Color settings (optional)"}
 \hide{
-  %<{type: "color", description: "Primary highlight/icon color", initialColor: "#E10000", id: "primaryColor"}>
-  %<{type: "color", description: "Dark color", initialColor: "#464646", id: "darkColor"}>
-  %<{type: "color", description: "Light color", initialColor: "#F5F5F5", id: "lightColor"}>
+  %<{type: "color", description: "Primary highlight/icon color", initialColor: "#E10000", id: "primaryColor", inputValue: "E10000"}>
+  %<{type: "color", description: "Dark color", initialColor: "#464646", id: "darkColor", inputValue: "464646"}>
+  %<{type: "color", description: "Light color", initialColor: "#F5F5F5", id: "lightColor", inputValue: "F5F5F5"}>
 }
 %>
 
